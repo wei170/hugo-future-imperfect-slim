@@ -1,5 +1,7 @@
 <head>
   {{ partial "meta" . }}
+  {{ partial "mathjax_support.html" . }}
+  {{ partial "seo_schema" . }}
   {{ hugo.Generator }}
   {{ template "_internal/schema.html" . }}
   {{ template "_internal/opengraph.html" . }}
