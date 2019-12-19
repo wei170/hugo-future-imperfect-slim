@@ -1,26 +1,26 @@
 +++
-author = "Autor tematu"
+author = "Autor eines Themas"
 categories = ["Hugo"]
 date = "2014-09-28"
-description = "Dowiedz się, jak stworzyć motyw na Hugo"
+description = "Erfahren Sie, wie Sie ein Thema für Hugo erstellen"
 featured = "pic03.jpg"
 featuredalt = "Pic 3"
 featuredpath = "date"
 linktitle = ""
-title = "Tworzenie nowego motywu"
+title = "Ein neues Thema erstellen"
 type = "post"
 
 +++
 
-## Wprowadzenie
+## Introduction
 
-Ten samouczek pokaże Ci, jak stworzyć prosty motyw w Hugo. Zakładam, że jesteś zaznajomiony z HTML, wierszem poleceń basha i że dobrze jest używać Markdown do formatowania treści. Wyjaśnię, w jaki sposób Hugo używa szablonów i jak możesz porządkować szablony, aby utworzyć motyw. Nie będę zajmował się używaniem CSS do stylizacji Twojego motywu.
+This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I'll explain how Hugo uses templates and how you can organize your templates to create a theme. I won't cover using CSS to style your theme.
 
-Zaczniemy od utworzenia nowej witryny z bardzo podstawowym szablonem. Następnie dodamy kilka stron i postów. Dzięki niewielkim zmianom możesz tworzyć wiele różnych typów stron internetowych.
+We'll start with creating a new site with a very basic template. Then we'll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.
 
-W tym samouczku wprowadzane polecenia zaczynają się od znaku „$”. Wynik zostanie podany. Linie zaczynające się od „#” to komentarze, które dodałem, aby wyjaśnić punkt. Kiedy pokazuję aktualizacje pliku, „: wq” w ostatnim wierszu oznacza zapisanie pliku.
+In this tutorial, commands that you enter will start with the "$" prompt. The output will follow. Lines that start with "#" are comments that I've added to explain a point. When I show updates to a file, the ":wq" on the last line means to save the file.
 
-Oto przykład:
+Here's an example:
 
 ```
 ## this is a comment

@@ -10,6 +10,7 @@ pluralizeListTitles     = false
 disableLanguages        = [""]
 
 [params]
+  mainSections = ["blog", "post"]
   # Loads CSS and JavaScript files. The variable is an array so that you can load
   # multiple/additional files if necessary. The standard theme files can be loaded
   # by adding the value, "default". Default includes the add-on.css and and-on.js.
@@ -87,21 +88,19 @@ disableLanguages        = [""]
 
   # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
   # due to its ease of use. Feel free to check out both and decide which you would
-  # prefer to use. See Staticman.yml for additional settings.
+  # prefer to use. See staticman.yml for additional settings.
   [params.staticman]
-    # Sets Statiman to be active
     # If using GitHub, go to https://github.com/apps/staticman-net
     # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
-    staticman           = false
-    # Sets the location for Staticman to connect to
-    api                 = "dev.staticman.net"  # without trailing slash
+    enabled             = false
+    api                 = ""  # without trailing slash, defaults to "staticman3.herokuapp.com"
     gitProvider         = "github"  # either "github" or "gitlab"
     username            = ""
     repo                = ""
     branch              = ""
 
     [params.staticman.recaptcha]
-      recaptcha         = false
+      # Both keys must be present to enable recaptcha
       siteKey           = "" # Site Key
       encryptedKey      = ""
 
@@ -110,150 +109,212 @@ disableLanguages        = [""]
   # Identifier prepends a Font Awesome icon to the menu item
   [[menu.main]]
     name              = "Home"
+    identifier        = "home"
     url               = "/"
-    identifier        = "fas fa-home"
+    pre               = "<i class='fa fa-home'></i>"
     weight            = 1
 
   [[menu.main]]
     name              = "About"
+    identifier        = "about"
     url               = "/about/"
-    identifier        = "far fa-id-card"
+    pre               = "<i class='far fa-id-card'></i>"
     weight            = 2
 
   [[menu.main]]
     name              = "Blog"
+    identifier        = "blog"
     url               = "/blog/"
-    identifier        = "far fa-newspaper"
+    pre               = "<i class='far fa-newspaper'></i>"
     weight            = 3
 
   [[menu.main]]
     name              = "Categories"
+    identifier        = "categories"
     url               = "/categories/"
-    identifier        = "fas fa-sitemap"
+    pre               = "<i class='fas fa-sitemap'></i>"
     weight            = 5
 
   [[menu.main]]
     name              = "Contact"
+    identifier        = "contact"
     url               = "/contact/"
-    identifier        = "far fa-envelope"
+    pre               = "<i class='far fa-envelope'></i>"
     weight            = 6
 
 [Languages]
   # Each language has its own menu.
   [Languages.en]
-    languageCode        = "en"
+    LanguageCode        = "en"
     LanguageName        = "English"
     weight              = 1
 
+  [Languages.de]
+    LanguageCode        = "de"
+    LanguageName        = "Deutsch"
+    title               = "Hugo Future Imperfect Slim auf deutsch"
+    description         = "Ein Thema von HTML5 UP, portiert von Julio Pescador.  Vereinfacht und verbessert von Patrick Collins. Mehrsprachig von StatnMap. Unterstützt von: Hugo. "
+    weight              = 2
+
+    [[Languages.de.menu.main]]
+      name              = "Startseite"
+      identifier        = "home"
+      url               = "/"
+      pre               = "<i class='fas fa-home'></i>"
+      weight            = 1
+
+    [[Languages.de.menu.main]]
+      name              = "Über mich"
+      identifier        = "about"
+      url               = "/about/"
+      pre               = "<i class='far fa-id-card'></i>"
+      weight            = 2
+
+    [[Languages.de.menu.main]]
+      name              = "Blog"
+      identifier        = "blog"
+      url               = "/blog/"
+      pre               = "<i class='far fa-newspaper'></i>"
+      weight            = 3
+
+    [[Languages.de.menu.main]]
+      name              = "Kategorien"
+      identifier        = "categories"
+      url               = "/categories/"
+      pre               = "<i class='fas fa-sitemap'></i>"
+      weight            = 5
+
+    [[Languages.de.menu.main]]
+      name              = "Kontakt"
+      identifier        = "contact"
+      url               = "/contact/"
+      pre               = "<i class='far fa-envelope'></i>"
+      weight            = 6
+
   [Languages.fr]
-    languageCode        = "fr"
+    LanguageCode        = "fr"
     LanguageName        = "Français"
-    title               = "Hugo Future Imperfect Slim in fr"
-    description         = "Un thème de HTML5 UP, porté par Julio Pescador. Slimmed et amélioré par Patrick Collins. Multilingue par StatnMap. Propulsé par Hugo. "
+    title               = "Hugo Future Imperfect Slim en français"
+    description         = "Un thème par HTML5 UP, porté par Julio Pescador. Simplifié et amélioré par Patrick Collins. Multilingue par StatnMap. Propulsé par Hugo."
     weight              = 2
 
     [[Languages.fr.menu.main]]
       name              = "Accueil"
+      identifier        = "home"
       url               = "/"
-      identifier        = "fas fa-home"
+      pre               = "<i class='fas fa-home'></i>"
       weight            = 1
 
     [[Languages.fr.menu.main]]
       name              = "About"
+      identifier        = "about"
       url               = "/about/"
-      identifier        = "far fa-id-card"
+      pre               = "<i class='far fa-id-card'></i>"
       weight            = 2
 
     [[Languages.fr.menu.main]]
       name              = "Blog"
+      identifier        = "blog"
       url               = "/blog/"
-      identifier        = "far fa-newspaper"
+      pre               = "<i class='far fa-newspaper'></i>"
       weight            = 3
 
     [[Languages.fr.menu.main]]
       name              = "Catégories"
+      identifier        = "categories"
       url               = "/categories/"
-      identifier        = "fas fa-sitemap"
+      pre               = "<i class='fas fa-sitemap'></i>"
       weight            = 5
 
     [[Languages.fr.menu.main]]
       name              = "Contact"
+      identifier        = "contact"
       url               = "/contact/"
-      identifier        = "far fa-envelope"
+      pre               = "<i class='far fa-envelope'></i>"
       weight            = 6
 
   [Languages.pl]
-    languageCode        = "pl"
-    LanguageName        = "Polskie"
-    title               = "Hugo przyszłość niedoskonała"
+    LanguageCode        = "pl"
+    LanguageName        = "Polski"
+    title               = "Hugo Future Imperfect Slim po polsku"
     description         = "Motyw HTML5 UP, przeniesiony przez Julio Pescadora i wzbogacony przez Patricka Collinsa. Wielojęzyczny przez StatnMap. Zasilany przez Hugo."
     weight              = 2
 
     [[Languages.pl.menu.main]]
       name              = "Home"
+      identifier        = "home"
       url               = "/"
-      identifier        = "fas fa-home"
+      pre               = "<i class='fas fa-home'></i>"
       weight            = 1
 
     [[Languages.pl.menu.main]]
       name              = "O mnie"
+      identifier        = "about"
       url               = "/about/"
-      identifier        = "far fa-id-card"
+      pre               = "<i class='far fa-id-card'></i>"
       weight            = 2
 
     [[Languages.pl.menu.main]]
       name              = "Blog"
+      identifier        = "blog"
       url               = "/blog/"
-      identifier        = "far fa-newspaper"
+      pre               = "<i class='far fa-newspaper'></i>"
       weight            = 3
 
     [[Languages.pl.menu.main]]
       name              = "Kategorie"
+      identifier        = "categories"
       url               = "/categories/"
-      identifier        = "fas fa-sitemap"
+      pre               = "<i class='fas fa-sitemap'></i>"
       weight            = 5
 
     [[Languages.pl.menu.main]]
       name              = "Kontakt"
+      identifier        = "contact"
       url               = "/contact/"
-      identifier        = "far fa-envelope"
+      pre               = "<i class='far fa-envelope'></i>"
       weight            = 6
 
-  [Languages.br]
-    languageCode        = "br"
+  [Languages.pt]
+    LanguageCode        = "pt"
     LanguageName        = "Português"
     title               = "Hugo Future Imperfect Slim em português"
     description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."
     weight              = 4
 
-    [[Languages.br.menu.main]]
+    [[Languages.pt.menu.main]]
       name              = "Início"
+      identifier        = "home"
       url               = "/"
-      identifier        = "fas fa-home"
+      pre               = "<i class='fas fa-home'></i>"
       weight            = 1
 
-    [[Languages.br.menu.main]]
+    [[Languages.pt.menu.main]]
       name              = "Sobre"
+      identifier        = "about"
       url               = "/about/"
-      identifier        = "far fa-id-card"
+      pre               = "<i class='far fa-id-card'></i>"
       weight            = 2
 
-    [[Languages.br.menu.main]]
+    [[Languages.pt.menu.main]]
       name              = "Blog"
+      identifier        = "blog"
       url               = "/blog/"
-      identifier        = "far fa-newspaper"
+      pre               = "<i class='far fa-newspaper'></i>"
       weight            = 3
 
-    [[Languages.br.menu.main]]
+    [[Languages.pt.menu.main]]
       name              = "Categorias"
+      identifier        = "categories"
       url               = "/categories/"
-      identifier        = "fas fa-sitemap"
+      pre               = "<i class='fas fa-sitemap'></i>"
       weight            = 5
 
-    [[Languages.br.menu.main]]
+    [[Languages.pt.menu.main]]
       name              = "Contato"
+      identifier        = "contact"
       url               = "/contact/"
-      identifier        = "far fa-envelope"
+      pre               = "<i class='far fa-envelope'></i>"
       weight            = 6
 
 # Sets Social Media icons to appear and link to your account. Value should be your
