@@ -1,8 +1,14 @@
 +++
-author = ""
-categories = []
+title = ""
 description = ""
-linktitle = ""
-images = [""]
-
+author = ""
+date = ""
+tags = [""]
+categories = [""]
+comments = true
+removeBlur = false
+[[images]]
+  src = ""
+  alt = ""
+  stretch = ""
 +++
